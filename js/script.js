@@ -1,4 +1,4 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 
 const gameBoard = [
   [$('#1-1'), $('#1-2'), $('#1-3')],
@@ -136,10 +136,10 @@ $('#O-button').on('click', function() {
 });
 
 $('#reset-button').on('click', function() {
-  $('.x-image').removeClass('clicked');
-  $('.o-image').removeClass('clicked');
-  $('#O-button').removeClass('active').prop('disabled', false);
-  $('#X-button').removeClass('active').prop('disabled', false);
+  $('.x-image').removeClass('clicked draw');
+  $('.o-image').removeClass('clicked draw');
+  $('#O-button').removeClass('active unclickable').prop('disabled', false);
+  $('#X-button').removeClass('active unclickable').prop('disabled', false);
   $('.cell').removeClass('Xclicked Oclicked')
   $('#info').html('Select X or O to go first:');
   $('#reset-button').removeClass('active');
@@ -200,6 +200,8 @@ for (let i = 0; i < gameBoard.length; i++) {
         if ($('.cell').length === $('.Xclicked').length + $('.Oclicked').length) {
           if (drawCheck()) {
             $('#info').html(`It's a draw!`);
+            $('.x-image').addClass('draw');
+            $('.o-image').addClass('draw');
             $("#O-button").removeClass('active');
             $("#X-button").removeClass('active');
             $('#reset-button').addClass('active');
@@ -221,6 +223,7 @@ $('#X-upload').on('change', function () {
     reader.readAsDataURL(fileData);
     reader.onload = function () {
       $('.x-image').attr('src', reader.result);
+      $('#X-token').attr('src', reader.result);
     }
     reader.onerror = function (error) {
       prompt('Error: ', error);
@@ -233,16 +236,11 @@ $('#O-upload').on('change', function () {
     reader.readAsDataURL(fileData);
     reader.onload = function () {
       $('.o-image').attr('src', reader.result);
+      $('#O-token').attr('src', reader.result);
     }
     reader.onerror = function (error) {
       prompt('Error: ', error);
     }
 });
 
-// });
-
-// HIGH PRIORITY
-// scale game for different screen sizes
-// add LocalStorage functionality
-// add half opacity for X and O when cursor hovers over grid cells
-// change font type
+});

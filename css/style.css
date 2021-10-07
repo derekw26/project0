@@ -1,13 +1,27 @@
-/* * {
-  border : 1px solid red;
-} */
-
 body {
+  margin-top: 60px;
   font-family: Avenir, sans-serif;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
-  height: 100vh;
+  background: linear-gradient(132deg, #ffd7d0, #cbd7fd);
+  background-size: 600% 600%;
+  -webkit-animation: pastels 20s ease infinite;
+  -moz-animation: pastels 20s ease infinite;
+  animation: pastels 20s ease infinite;
+}
+
+@-webkit-keyframes pastels {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes pastels {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes pastels {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 .container {
@@ -16,6 +30,7 @@ body {
 }
 
 header {
+  background-color: white;
   text-align: center;
   font-size: 120%;
   background-color: white;
@@ -31,6 +46,15 @@ header {
 
 #X-upload, #O-upload {
   display: none;
+}
+
+#X-token, #O-token {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  display: block;
+  max-width: 150px;
+  max-height: 150px;
 }
 
 #X-upload_label, #O-upload_label {
@@ -102,6 +126,7 @@ main {
 }
 
 .board {
+  background-color: white;
   text-align: center;
   margin: 0 auto;
   width: 450px;
@@ -115,14 +140,17 @@ main {
 
 .cell {
   margin: 0 auto;
+  min-width: 99%;
+  min-height: 99%;
   border: 2px solid black;
   position: relative;
-  top: 0;
-  left: 0;
+  justify-content: center;
 }
 
 .o-image {
-  width: 99%;
+
+  max-width: 99%;
+  max-height: 99%;
   position: relative;
   opacity: 0;
   visibility: hidden;
@@ -130,7 +158,8 @@ main {
 }
 
 .x-image {
-  width: 99%;
+  max-width: 99%;
+  max-height: 99%;
   position: absolute;
   top: 0;
   left: 0;
@@ -139,20 +168,15 @@ main {
   z-index: 1;
 }
 
-#o1-1.clicked, #o1-2.clicked, #o1-3.clicked,
-#o2-1.clicked, #o2-2.clicked, #o2-3.clicked,
-#o3-1.clicked, #o3-2.clicked, #o3-3.clicked {
+.x-image.clicked, .o-image.clicked {
+  display: inline-block;
   transition: 0.2s;
   opacity: 1;
   visibility: visible;
 }
 
-#x1-1.clicked, #x1-2.clicked, #x1-3.clicked,
-#x2-1.clicked, #x2-2.clicked, #x2-3.clicked,
-#x3-1.clicked, #x3-2.clicked, #x3-3.clicked {
-  transition: 0.2s;
-  opacity: 1;
-  visibility: visible;
+.x-image.draw, .o-image.draw {
+  filter: grayscale(100%);
 }
 
 #X-button.active {
@@ -167,64 +191,66 @@ main {
   color: white;
 }
 
+.Xwin {
+  background-color: crimson;
+}
+
+.Owin {
+  background-color: royalblue;
+}
+
 .hstrike {
   height: 10px;
-  width: 400px;
+  width: 550px;
   overflow: auto;
   position: absolute;
-  left: 22px;
+  left: -50px;
   top: 70px;
   z-index: 2;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 0.5em;
+}
+
+.vstrike {
+  height: 550px;
+  width: 10px;
+  overflow: auto;
+  position: absolute;
+  left: 70px;
+  top: -50px;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 0.5em;
+}
+
+.dstrike {
+  transform: rotate(-45deg);
+  height: 700px;
+  width: 10px;
+  overflow: auto;
+  position: absolute;
+  top: -275px;
+  left: 64px;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 0.5em;
+}
+
+#d1 {
+  transform: rotate(-45deg);
+}
+
+#d2 {
+  transform: rotate(45deg);
 }
 
 #h1.active, #h2.active, #h3.active,
 #v1.active, #v2.active, #v3.active,
 #d1.active, #d2.active  {
-  display: inline;
-}
-
-.Xwin {
-  background-color: red;
-}
-
-.Owin {
-  background-color: blue;
-}
-
-.vstrike {
-  height: 400px;
-  width: 10px;
-  overflow: auto;
-  position: absolute;
-  left: 70px;
-  top: 22px;
-  z-index: 2;
-  display: none;
-}
-
-#d1 {
-  transform: rotate(-45deg);
-  height: 510px;
-  width: 10px;
-  overflow: auto;
-  display: block;
-  position: absolute;
-  top: -180px;
-  left: 70px;
-  z-index: 2;
-  display: none;
-}
-
-#d2 {
-  transform: rotate(45deg);
-  height: 510px;
-  width: 10px;
-  overflow: auto;
-  display: inline;
-  position: absolute;
-  top: -180px;
-  left: 70px;
-  z-index: 2;
-  display: none;
+  opacity: 1;
+  visibility: visible;
+  transition: 1s;
 }
