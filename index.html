@@ -10,37 +10,56 @@
   <body>
     <div class="container">
       <header>
-        <h1>Tic-Tac-Toe</h1>
-        <div id="info">Select who goes first:</div>
-        <button id="X-button">X</button>
-        <button id="O-button">O</button>
-        <br>
-        <div id=score>
-          <p id="X-score">0</p>
-          <p id="score-text">Score</p>
-          <p id="O-score">0</p>
+        <div>
+          <p class="upload_msg">Upload new token for X</p>
+          <input type="file" id="X-upload" name="img" accept="image/*"/>
+          <label for="X-upload" id="X-upload_label">Select image</label>
         </div>
-        <button id="reset-button">Play Again</button>
+        <div>
+          <h1>Tic-Tac-Toe</h1>
+          <div id="info">Select X or O to go first:</div>
+          <button id="X-button">X</button>
+          <button id="O-button">O</button>
+          <br>
+          <div id=score>
+            <p id="X-score">0</p>
+            <p id="score-text">Score</p>
+            <p id="O-score">0</p>
+          </div>
+          <button id="reset-button">Play Again</button>
+        </div>
+        <div>
+          <p class="upload_msg">Upload new token for O</p>
+          <input type="file" id="O-upload" name="img" accept="image/*"/>
+          <label for="O-upload" id="O-upload_label">Select image</label>
+        </div>
       </header>
       <main>
         <div class="board">
           <div id="1-1" class="cell">
+            <div class="hstrike" id="h1"></div>
+            <div class="vstrike" id="v1"></div>
             <img id="o1-1" class="o-image" src="img/O_img.jpeg" alt="">
             <img id="x1-1" class="x-image" src="img/X_img.jpeg" alt="">
           </div>
           <div id="1-2" class="cell">
+            <div class="vstrike" id="v2"></div>
             <img id="o1-2" class="o-image" src="img/O_img.jpeg" alt="">
             <img id="x1-2" class="x-image" src="img/X_img.jpeg" alt="">
           </div>
           <div id="1-3" class="cell">
+            <div class="vstrike" id="v3"></div>
             <img id="o1-3" class="o-image" src="img/O_img.jpeg" alt="">
             <img id="x1-3" class="x-image" src="img/X_img.jpeg" alt="">
           </div>
           <div id="2-1" class="cell">
+            <div class="hstrike" id="h2"></div>
             <img id="o2-1" class="o-image" src="img/O_img.jpeg" alt="">
             <img id="x2-1" class="x-image" src="img/X_img.jpeg" alt="">
           </div>
           <div id="2-2" class="cell">
+            <div class="dstrike" id="d1"></div>
+            <div class="dstrike" id="d2"></div>
             <img id="o2-2" class="o-image" src="img/O_img.jpeg" alt="">
             <img id="x2-2" class="x-image" src="img/X_img.jpeg" alt="">
           </div>
@@ -49,6 +68,7 @@
             <img id="x2-3" class="x-image" src="img/X_img.jpeg" alt="">
           </div>
           <div id="3-1" class="cell">
+            <div class="hstrike" id="h3"></div>
             <img id="o3-1" class="o-image" src="img/O_img.jpeg" alt="">
             <img id="x3-1" class="x-image" src="img/X_img.jpeg" alt="">
           </div>
@@ -61,7 +81,6 @@
             <img id="x3-3" class="x-image" src="img/X_img.jpeg" alt="">
           </div>
         </div>
-
       </main>
     </div>
   </body>
