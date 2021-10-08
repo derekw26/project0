@@ -6,6 +6,7 @@ Technologies used:
 - HTML, CSS and Javascript
 - [Jquery library](https://jquery.com/)
 - [CSS Gradient Animator](https://www.gradient-animator.com/)
+- Stack Overflow
 - Google
 - Rest of the internet
 
@@ -15,12 +16,16 @@ Download the files into a folder and open "index.html" in a browser. Alternative
 
 ## Methodology
 
-I wanted to use images to represent the X and O on the board. I used Jquery selectors.
+- Array of arrays to represent the board display
+- Images to represent the X and O on the board
+- Buttons to represent the turn selector
+- Jquery selectors to manipulate the DOM elements
+- Added functionality for user uploaded tokens
 
 ## Unsolved Problems
 
-- Stacking the X and O Images on top of each other without using ```display: none```, and maintaining transitions
-- A few other things to add
+- Stacking the X and O Images on top of each other without using ```display: none``` and maintaining transitions
+- Adding new features
 
 ## Future Additions
 
