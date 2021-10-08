@@ -12,7 +12,7 @@ Technologies used:
 
 ## Installation
 
-Download the files into a folder and open "index.html" in a browser. Alternatively you can test it out [**here**](https://github.com/derekw26/project0).
+Download the files into a folder and open "index.html" in a browser. Alternatively you can test it out [**here**](https://derekw26.github.io/project0).
 
 ## Methodology
 
