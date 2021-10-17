@@ -19,7 +19,7 @@ Download the files into a folder and open "index.html" in a browser. Alternative
 - Array of arrays to represent the board display
 - Images to represent the X and O on the board
 - Buttons to represent the turn selector
-- Jquery selectors to manipulate the DOM elements
+- jQuery selectors to manipulate the DOM elements
 - Added functionality for user uploaded tokens
 
 ## Unsolved Problems
