@@ -4,7 +4,7 @@ Welcome to the wonderful game of Tic-Tac-Toe created for Project #0.
 
 Technologies used:
 - HTML, CSS and Javascript
-- [Jquery library](https://jquery.com/)
+- [jQuery library](https://jquery.com/)
 - [CSS Gradient Animator](https://www.gradient-animator.com/)
 - Stack Overflow
 - Google
@@ -25,7 +25,6 @@ Download the files into a folder and open "index.html" in a browser. Alternative
 ## Unsolved Problems
 
 - Stacking the X and O Images on top of each other without using ```display: none``` and maintaining transitions
-- Adding new features
 
 ## Future Additions
 
